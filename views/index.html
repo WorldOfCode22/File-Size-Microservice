@@ -1,0 +1,50 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Size Microservice</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="contain">
+      <h1>
+        File Size Microservice
+      </h1>
+      <h3>
+        Click the button below to select the file you wish to know the size of.
+      </h3>
+      <p>
+        If you receieve an error or no result update your browser. 
+      </p>
+      <form id="form">
+        <input id="file" name="file" type="file" enctype="multipart/form-data">
+      </form>
+    </div>
+  </body>
+</html>
+<style>
+  body{
+    background-color:black;
+  }
+  #contain{
+    position:absolute;
+    width:50%;
+    background-color:yellow;
+    left:25%;
+    border-radius:15px;
+    text-align:center;
+  }
+</style>
+<script>
+  $('#file').bind('change', function() {
+     alert('File Size:' + ' '+this.files[0].size + ' '+ 'bytes'); 
+  });
+</script>
